@@ -1,0 +1,9 @@
+{% load wagtailimages_tags static %}
+{#TODO Make Prettier image holder!#}
+
+{% for item in self %}
+    <div class="col col-xs-6 col-sm-4 col-md-3">
+        {% image item.image width-400 class='img-responsive' %}
+    </div>
+{% endfor %}
+

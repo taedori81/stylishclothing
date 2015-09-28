@@ -1,0 +1,22 @@
+
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+
+
+{% for lookbook in lookbook_list %}
+    <div class="col col-sm-4 col-md-3 col-xs-6">
+        <a href="{% pageurl lookbook %}">
+            <div class="image-container">
+                {% image lookbook.cover_image width-300 as cover_image %}
+                <img src="{{ cover_image.url }}" alt="{{ lookbook.heading }}" class="img-responsive">
+                <div class="lookbook-text-container">
+                    <h4>{{ lookbook.heading }}</h4>
+                    <p>{{ lookbook.intro }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+

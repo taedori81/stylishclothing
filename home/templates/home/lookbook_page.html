@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-lightbox.min.css' %}">
+{% endblock %}
+
+{% block outerbreadcrumb %}{% endblock outerbreadcrumb %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+
+        </div>
+        {{ self.body }}
+    </div>
+{% endblock %}
+
+{% block extra_script %}
+    <script src="{% static "js/bootstrap-lightbox.min.js" %}"></script>
+{% endblock extra_script %}

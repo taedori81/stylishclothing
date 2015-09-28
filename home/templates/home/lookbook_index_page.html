@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+{% block body_class %}template-{{ self.get_verbose_name|slugify }}{% endblock %}
+
+{% block outerbreadcrumb %}{% endblock outerbreadcrumb %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-col-sm-12">
+                <h1>{{ self.title }}</h1>
+                <p>{{ self.intro }}</p>
+            </div>
+
+        </div>
+        <div class="row">
+            {% include 'home/include/lookbook_item.html' with lookbook_list=lookbooks %}
+        </div>
+    </div>
+{% endblock %}
